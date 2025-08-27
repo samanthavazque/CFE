@@ -233,14 +233,14 @@ table thead{
 <body>
 
       <!-- Barra de navegación -->
-            <nav class="navbar navbar-dark shadow-sm" style="background: #218838;">
+            <nav class="navbar navbar-dark shadow-sm" style="background: linear-gradient(90deg, #218838 60%, #155724 100%);">
                 <div class="container-fluid d-flex justify-content-between align-items-center">
                     <a class="navbar-brand d-flex align-items-center" href="#">
                         <img src="logoo.jpg" alt="Logo" style="height:60px; width:auto; margin-right:16px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
                     </a>
                     <form action="cerrarsesion.php" method="POST" class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-danger btn-lg fw-bold d-flex align-items-center" style="gap: 10px; border-radius: 8px;">
-                            <i class="bi bi-power" style="font-size: 1.5rem;"></i> Cerrar sesión
+                        <button type="submit" class="btn btn-outline-light btn-lg fw-bold d-flex align-items-center" style="gap: 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); transition: background 0.3s;">
+                            <i class="bi bi-power" style="font-size: 1.5rem;"></i> <span style="font-size:1.1rem;">Cerrar sesión</span>
                         </button>
                     </form>
                 </div>
@@ -341,7 +341,7 @@ table thead{
                             $imagePath = $imgs[$i];
                             if (file_exists($imagePath)) {
                                 echo '<a href="' . $imagePath . '" target="_blank" class="d-block mb-3">';
-                                echo '<img src="' . $imagePath . '?n=' . time() . '" class="img-fluid" style="width:100%;height:auto;" alt="Image">';
+                                echo '<img src="' . $imagePath . '?n=' . time() . '" class="img-fluid" style="width:80%;height:auto;" alt="Image">';
                                 echo '</a>';
                             } else {
                                 echo '<p>Imagen no encontrada</p>';
@@ -352,7 +352,7 @@ table thead{
                         $videoPath = isset($row['video']) ? $row['video'] : '';
                         if ($videoPath && $videoPath !== '' && file_exists($videoPath)) {
                             echo "<div style='display: flex; flex-direction: column; align-items: start;'>";
-                            echo "<video style='width: 100%;' controls><source src='{$videoPath}?n=" . time() . "' type='video/mp4'>Tu navegador no soporta el elemento de video.</video>";
+                            echo "<video style='width: 120%;' controls><source src='{$videoPath}?n=" . time() . "' type='video/mp4'>Tu navegador no soporta el elemento de video.</video>";
                             echo "<a href='{$videoPath}' download class='btn btn-success mt-2'>Descargar video</a>";
                             echo "</div>";
                         } else {
@@ -381,7 +381,7 @@ table thead{
                         $videoFilePath = $dir . $videoFileName;
 
                         if (file_exists($videoFilePath)) {
-                            echo "<video style='width: 100%;' controls><source src='{$videoFilePath}' type='video/mp4'>Tu navegador no soporta el elemento de video.</video>";
+                            echo "<video style='width: 110%;' controls><source src='{$videoFilePath}' type='video/mp4'>Tu navegador no soporta el elemento de video.</video>";
                         } else {
                             // No mostrar nada si no hay video
                         }

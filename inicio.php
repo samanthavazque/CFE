@@ -458,7 +458,7 @@
 
                             if (file_exists($videoFilePath)) {
                                     $videoUrl = $videoFilePath . '?v=' . time(); // Evita caché mostrando el video actualizado
-                                    echo "<video style='max-width:100%;height:auto;' controls><source src='{$videoUrl}' type='video/mp4'>Tu navegador no soporta el elemento de video.</video>";
+                                    echo "<video style='max-width:110%;height:auto;' controls><source src='{$videoUrl}' type='video/mp4'>Tu navegador no soporta el elemento de video.</video>";
                             } else {
                                 echo "No hay video disponible";
                             }
